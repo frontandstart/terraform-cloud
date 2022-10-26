@@ -16,7 +16,6 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 FROM terraform-cloud as terraform-cloud-aws
 
 COPY --from=amazon/aws-cli:latest /usr/local/bin/* /usr/local/bin/
-ENTRYPOINT [ "/bin/sh" ]
 
 FROM mcr.microsoft.com/azure-cli as terraform-cloud-azure
 
