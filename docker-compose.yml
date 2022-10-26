@@ -1,23 +1,23 @@
 services:
 
   aws-cli:
-    image: frontandstart/terraform-cloud-aws
+    image: frontandstart/terraform-cloud:aws
     volumes:
       - aws-data:/root
 
   gcp-cli:
-    image: frontandstart/terraform-cloud-gcp
+    image: frontandstart/terraform-cloud:gcp
     volumes:
       - gcp-data:/root
   
   azure-cli:
-    image: frontandstart/terraform-cloud-azure
+    image: frontandstart/terraform-cloud:azure
     tty: true
     volumes:
       - azure-data:/root
 
   do-cli:
-    image: frontandstart/terraform-cloud-digitalocean
+    image: frontandstart/terraform-cloud:do
     volumes:
       - do-data:/root
     tty: true

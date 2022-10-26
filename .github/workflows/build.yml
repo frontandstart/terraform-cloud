@@ -2,9 +2,14 @@ name: 'Build and Push Docker Images'
 
 on:
   push:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'docker-compose.yml'
     branches:
       - "main"
-
+    
+      
   schedule:
     - cron: '0 2 * * 1'
 
