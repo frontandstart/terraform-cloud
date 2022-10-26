@@ -1,10 +1,10 @@
-# Terraform, Kubernetes, Helm with Amazon/GCP/Azure cli in one docker image
+# Cloud CLI's (Azure, AWS, GCP, Digitalocean) with Terraform, Kubernetes and Helm
 
 [![Build and Push Docker Images](https://github.com/frontandstart/terraform-cloud/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/frontandstart/terraform-cloud/actions/workflows/build.yml)
 
 ## What is this?
 
-Docker images help maintain cloud infrastructure with Terraform, Kubernetes, and Helm.
+Docker images help maintain cloud infrastructure with Terraform, Kubernetes and Helm.
 
 Using [./docker-compose.yml](./docker-compose.yml) as a reference, add a CLI container to your project to keep
 Cloud credentials are isolated from a local machine and use cloud CLI in one command.
