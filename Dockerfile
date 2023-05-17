@@ -1,5 +1,5 @@
 # Stage: terraform-cloud-gcp
-FROM gcr.io/google.com/cloudsdktool/google-cloud-sdk:alpine as gcp
+FROM google/cloud-sdk:alpine as gcp
 
 COPY --from=hashicorp/terraform:1.5.0-beta1 /bin/terraform /bin
 
@@ -32,7 +32,7 @@ RUN rm -rf kubectl
 RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 # Stage: terraform-cloud-do
-FROM digitalocean/doctl as digitalocean
+FROM digitalocean/doctl:latest as digitalocean
 
 COPY --from=hashicorp/terraform:1.5.0-beta1 /bin/terraform /bin
 
