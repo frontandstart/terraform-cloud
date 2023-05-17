@@ -17,7 +17,7 @@ services:
       - azure-data:/root
 
   do-cli:
-    image: frontandstart/terraform-cloud:do
+    image: frontandstart/terraform-cloud:digitalocean
     volumes:
       - do-data:/root
     tty: true
