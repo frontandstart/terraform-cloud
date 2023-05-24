@@ -14,7 +14,7 @@ FROM amazon/aws-cli:latest as aws
 
 COPY --from=hashicorp/terraform:1.5.0-beta1 /bin/terraform /bin
 
-RUN yum update -y && yum upgrade -y && yum install -y curl bash openssl tar
+RUN yum update -y && yum upgrade -y && yum install -y curl bash openssl tar git
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 RUN rm -rf kubectl
@@ -25,7 +25,7 @@ FROM mcr.microsoft.com/azure-cli as azure
 
 COPY --from=hashicorp/terraform:1.5.0-beta1 /bin/terraform /bin
 
-RUN apk update && apk upgrade && apk add curl bash openssl tar
+RUN apk update && apk upgrade && apk add curl bash openssl tar  
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 RUN rm -rf kubectl
